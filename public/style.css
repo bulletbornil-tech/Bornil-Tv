@@ -1,25 +1,80 @@
 body {
-    font-family: Arial;
-    background: #111;
-    color: white;
-    text-align: center;
+  margin: 0;
+  background: #0a0a0a;
+  color: white;
+  font-family: Arial;
 }
 
-#channels {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    padding: 10px;
+/* HEADER */
+header {
+  text-align: center;
+  padding: 15px;
+  background: linear-gradient(90deg, #ff0000, #000);
 }
 
-.channel {
-    background: #222;
-    padding: 10px;
-    border-radius: 10px;
-    cursor: pointer;
+/* FEATURED PLAYER */
+#featured {
+  position: sticky;
+  top: 0;
+  background: black;
+  z-index: 10;
 }
 
 video {
-    width: 100%;
-    max-height: 250px;
+  width: 100%;
+  height: 220px;
+  background: black;
+}
+
+/* CATEGORY SCROLL */
+#categories {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px;
+  gap: 10px;
+}
+
+#categories button {
+  background: #ff0033;
+  border: none;
+  padding: 8px 15px;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* CHANNEL GRID */
+#channelList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 12px;
+  padding: 10px;
+}
+
+/* CHANNEL CARD (🔥 UNIQUE HOVER EFFECT) */
+.channel {
+  background: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s;
+  transform: scale(1);
+}
+
+.channel:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 15px red;
+}
+
+.channel img {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+}
+
+.channel p {
+  margin: 5px;
+  font-size: 12px;
+  text-align: center;
 }
