@@ -1,16 +1,19 @@
-function play() {
-  const url = document.getElementById("url").value;
-  const video = document.getElementById("video");
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IPTV Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-  if (Hls.isSupported()) {
-    const hls = new Hls();
-    hls.loadSource(url);
-    hls.attachMedia(video);
-    hls.on(Hls.Events.MANIFEST_PARSED, function () {
-      video.play();
-    });
-  } else {
-    video.src = url;
-    video.play();
-  }
-}
+<h1>📺 Bornil IPTV</h1>
+
+<div id="player">
+    <video id="videoPlayer" controls autoplay></video>
+</div>
+
+<div id="channels"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
