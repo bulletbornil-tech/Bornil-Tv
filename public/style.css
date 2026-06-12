@@ -1,0 +1,25 @@
+body {
+    font-family: Arial;
+    background: #111;
+    color: white;
+    text-align: center;
+}
+
+#channels {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px;
+}
+
+.channel {
+    background: #222;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+video {
+    width: 100%;
+    max-height: 250px;
+}
