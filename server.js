@@ -4,7 +4,9 @@ const fetch = require("node-fetch");
 
 const app = express();
 app.use(cors());
-
+app.get("/", (req, res) => {
+    res.send("Bornil TV Server is Running ✔");
+});
 const M3U_URL = "https://go.skym3u.top/k98v.m3u";
 
 app.get("/playlist", async (req, res) => {
