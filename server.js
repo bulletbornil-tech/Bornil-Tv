@@ -4,21 +4,30 @@ const fetch = require("node-fetch");
 
 const app = express();
 app.use(cors());
+
+// Home route
 app.get("/", (req, res) => {
-    res.send("Bornil TV Server is Running ✔");
+    res.send("Server is running");
 });
+
+// M3U URL
 const M3U_URL = "https://go.skym3u.top/k98v.m3u";
 
+// Playlist API
 app.get("/playlist", async (req, res) => {
     try {
         const response = await fetch(M3U_URL);
         const data = await response.text();
         res.send(data);
-    } catch (err) {
-        res.status(500).send("Error");
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Failed to load playlist");
     }
 });
 
-app.listen(3000, () => {
-    console.log("Server running");
+// Port setup for Render
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log("Server running on port " + PORT);
 });
