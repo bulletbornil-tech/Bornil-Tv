@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bornil TV</title>
+  <style>
+    body {
+      background: black;
+      color: white;
+      text-align: center;
+      font-family: Arial;
+    }
+
+    input, button {
+      padding: 10px;
+      width: 80%;
+      margin-top: 10px;
+    }
+
+    video {
+      width: 90%;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>🔥 Bornil TV IPTV Player</h2>
+
+<input id="url" placeholder="Paste M3U8 link here">
+<br>
+<button onclick="play()">Play</button>
+
+<br>
+
+<video id="video" controls autoplay></video>
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+<script>
+function play() {
+  const url = document.getElementById("url").value;
+  const video = document.getElementById("video");
+
+  if (Hls.isSupported()) {
+    const hls = new Hls();
+    hls.loadSource(url);
+    hls.attachMedia(video);
+  } 
+  else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+    video.src = url;
+  }
+}
+</script>
+
+</body>
+</html>
