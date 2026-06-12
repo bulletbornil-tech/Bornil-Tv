@@ -1,19 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>IPTV Player</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Bornil World Cup TV</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<h1>📺 Bornil IPTV</h1>
+<!-- TOP NAV -->
+<header>
+  <h1>🏆 Bornil World Cup TV</h1>
+</header>
 
-<div id="player">
-    <video id="videoPlayer" controls autoplay></video>
+<!-- FEATURED PLAYER -->
+<div id="featured">
+  <video id="videoPlayer" controls></video>
 </div>
 
-<div id="channels"></div>
+<!-- CATEGORY BAR -->
+<div id="categories"></div>
 
-<script src="app.js"></script>
+<!-- CHANNEL GRID -->
+<div id="channelList"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script src="script.js"></script>
 </body>
 </html>
